@@ -1,0 +1,23 @@
+[package]
+name = "ip-family"
+version = "0.1.0"
+authors = ["Tilo Spannagel <development@tilosp.de>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/tilosp/ip-family-rs"
+homepage = "https://crates.io/crates/ip-family"
+documentation = "https://docs.rs/ip-family"
+keywords = ["ip", "family"]
+description = "IP family enum with functions to get special ips of the right family"
+readme = "README.md"
+include = [
+    "/Cargo.toml",
+    "/LICENSE-APACHE",
+    "/LICENSE-MIT",
+    "/README.md",
+    "/src/**",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
