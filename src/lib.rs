@@ -230,15 +230,6 @@ impl AsRef<IpFamily> for IpAddr {
     }
 }
 
-impl From<IpAddr> for IpFamily {
-    fn from(addr: IpAddr) -> Self {
-        match addr {
-            IpAddr::V4(_) => IpFamily::V4,
-            IpAddr::V6(_) => IpFamily::V6,
-        }
-    }
-}
-
 impl AsRef<IpFamily> for SocketAddr {
     fn as_ref(&self) -> &IpFamily {
         match self {
@@ -248,12 +239,9 @@ impl AsRef<IpFamily> for SocketAddr {
     }
 }
 
-impl From<SocketAddr> for IpFamily {
-    fn from(addr: SocketAddr) -> Self {
-        match addr {
-            SocketAddr::V4(_) => IpFamily::V4,
-            SocketAddr::V6(_) => IpFamily::V6,
-        }
+impl<T: AsRef<IpFamily>> From<T> for IpFamily {
+    fn from(value: T) -> Self {
+        *value.as_ref()
     }
 }
 
