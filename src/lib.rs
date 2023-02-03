@@ -213,7 +213,7 @@ impl IpFamily {
         }
     }
 
-    pub fn unspecified(&self) -> IpAddr {
+    pub const fn unspecified(&self) -> IpAddr {
         match self {
             Self::V4 => IpAddr::V4(Ipv4Addr::UNSPECIFIED),
             Self::V6 => IpAddr::V6(Ipv6Addr::UNSPECIFIED),
